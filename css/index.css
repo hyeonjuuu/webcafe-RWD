@@ -28,10 +28,12 @@
   background-color: violet;
   padding-left: 100px;
   list-style: none;
+  text-align: right;
+  font-size: 0;
 }
 
 .memberOnly li {
-  height: 24px;
-  background: url(./../images/checked.svg) no-repeat;
-  padding-left: 30px;
+  background-color: yellowgreen;
+  display: inline;
+  font-size: 1.6rem;
 }
