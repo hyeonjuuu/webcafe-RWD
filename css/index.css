@@ -29,21 +29,34 @@
   padding-left: 0;
   list-style: none;
   /* display: flow-root; */
-  float: right;
+  overflow: hidden;
+  /* float: right; */
 
 }
 
+/* .memberOnly::before {
+  content: "첫번째 아이템";
+  background-color: gold;
+} */
+
+.memberOnly::after {
+  content: "";
+  background-color: teal;
+  display: table;
+  clear: both;
+}
+
 .memberOnly li:first-child {
-  /* background-color: yellowgreen; */
+  background-color: yellowgreen;
   float: left;
 }
 
 .memberOnly li:nth-child(2) {
-  /* background-color: salmon; */
+  background-color: salmon;
   float: left;
 }
 
 .memberOnly li:last-child {
-  /* background-color: aqua; */
+  background-color: aqua;
   float: left;
 }
