@@ -18,10 +18,8 @@
   background-color: yellowgreen;
   width: 12.75rem; /* 204px */
   height: 3.75rem; /* 60px */
-  position: absolute;
-  bottom: 0;
-  right: 0;
 }
+
 .logo__link {
   display: block;
   width: 100%;
@@ -30,11 +28,14 @@
 }
 
 /* 공통 멤버 서비스 */
-.memberOnly {
+.memberOnlyWrapper {
+  display: flow-root;
   background-color: violet;
+}
+.memberOnly {
   padding-left: 0;
   list-style: none;
-  display: flow-root;
+  float: right;
 }
 
 .memberOnly li {
@@ -82,22 +83,52 @@ fieldset {
 }
 
 /* *form, fieldset에 직접 style 주지 않기 */
-.searchForm_group {
+.searchForm__group {
   background-color: skyblue;
 }
+
 
 /* 모바일 디바이스 */
 /* ^조건식: 320px - 767px까지 모바일 디바이스로 렌더링 */
 @media (min-width: 320px) and (max-width: 767px) {
   /* 모바일 헤더 */
-  .appHeader{
+  .appHeader {
     color: var(--white);
     background: var(--primary-color);
+    padding-top: 3.125rem;
   }
+  /* 모바일 로고 */
+  .logo {
+    background-color: blue;
+  }
+  /* 모바일 멤버 서비스 */
+  .memberOnly {
+    position: absolute;
+    top: var(--spacing-base);
+    right: var(--spacing-lg);
+  }
+  /* 모바일 검색 폼 */
 }
 
 /* 데스크탑 디바이스 */
 /* ^768px 부터 데스크탑 디바이스로 렌더링 */
-@media (min-width: 768px) and (max-width: 767px) {
+@media (min-width: 768px) {
+  /* 데스크탑 헤더 */
+  .appHeader {
+    background-color: yellow;
+  }
+  /* 데스크탑 로고 */
+  .logo {
+    position: absolute;
+    left: var(--spacing-lg);
+    top: 50%;
+    margin-top: -1.875rem;
+    background: red;
+  }
+  /* 데스크탑 멤버 서비스 */
 
+  /* 데스크탑 검색 폼 */
+  .searchForm__group {
+    text-align: right;
+  }
 }
