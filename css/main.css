@@ -5,20 +5,94 @@
 @import url(./base.css);
 
 /* 웹카페 반응형 스타일 */
+/* 공통 스타일 */
+
+/* 공통 헤더 */
 .appHeader {
-  background-color: yellow;
+  position: relative;
+  padding: var(--spacing-base) var(--spacing-lg);
 }
 
-/* 공통 스타일 */
 /* 공통 로고 */
 .logo {
+  background-color: yellowgreen;
   width: 12.75rem; /* 204px */
   height: 3.75rem; /* 60px */
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
-
 .logo__link {
   display: block;
   width: 100%;
   height: 100%;
   background: url(./../images/webcafe-logo.png) no-repeat 0 0 / 100%;
+}
+
+/* 공통 멤버 서비스 */
+.memberOnly {
+  background-color: violet;
+  padding-left: 0;
+  list-style: none;
+  display: flow-root;
+}
+
+.memberOnly li {
+  float: left;
+}
+
+/* 공통 검색 폼 */
+
+input[type="search"] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.button {
+  cursor: pointer;
+  border: 0;
+  border-radius: 0.25rem;
+  height: 2rem;
+  padding: 0.125rem 0.75rem;
+  background: transparent;
+}
+
+.button--fillSecondary {
+  color: var(--white);
+  background: var(--secondary-color);
+}
+
+.button--outlineSecondary {
+  color: var(--secondary-color);
+  border: 1px solid currentColor;
+}
+
+.formInput__input {
+  border: 1px solid var(--border-color);
+  border-radius: 0.25rem;
+  height: 2rem;
+  padding: 0.125rem 0.75rem;
+}
+
+.searchForm__group {
+  background-color: skyblue;
+}
+
+/* 모바일 디바이스 */
+@media (min-width: 320px) and (max-width: 767px) {
+  /* 모바일 헤더 */
+  .appHeader {
+    color: var(--white);
+    background: var(--primary-color);
+  }
+}
+
+/* 데스크탑 디바이스 */
+@media (min-width: 768px) {
 }
