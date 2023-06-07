@@ -28,35 +28,19 @@
   background-color: violet;
   padding-left: 0;
   list-style: none;
-  /* display: flow-root; */
-  overflow: hidden;
-  /* float: right; */
+  display: flow-root;
 
 }
 
-/* .memberOnly::before {
-  content: "첫번째 아이템";
-  background-color: gold;
-} */
-
-.memberOnly::after {
-  content: "";
-  background-color: teal;
-  display: table;
-  clear: both;
-}
-
-.memberOnly li:first-child {
-  background-color: yellowgreen;
+.memberOnly li {
   float: left;
 }
 
-.memberOnly li:nth-child(2) {
-  background-color: salmon;
-  float: left;
-}
-
-.memberOnly li:last-child {
-  background-color: aqua;
-  float: left;
+/* 공통 검색 폼 */
+.formInput__input {
+  /* #변수를 사용하여 border-color 설정 */
+  border: 1px solid var(--border-color);
+  border-radius: 0.25rem;
+  height: 2rem;
+  padding: 0.125rem 0.75rem;
 }
