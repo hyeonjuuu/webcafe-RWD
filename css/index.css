@@ -94,10 +94,19 @@ fieldset {
   /* 데스크탑 헤더 */
   .appHeader {
     background-color: yellow;
+    display: grid;
+    /* ^뷰포트의 2분의 1크기 */
+    grid-template-columns: 1fr 1fr;
   }
   /* 데스크탑 로고 */
   .logo {
     background: red;
+    /* ^column 1에서 시작해서 2에서 끝나기 */
+    /* ^row 1에서 시작해서 3에서 끝나기 */
+    /* ^rs-cs-re-ce */
+    grid-area: 1 / 1 / 3 / 2;
+    /* ^logo를 중앙에 배치 */
+    align-self: center;
   }
   /* 데스크탑 멤버서비스 */
   /* 데스크탑 검색 폼 */
