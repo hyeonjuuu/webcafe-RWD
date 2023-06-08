@@ -1,0 +1,60 @@
+body {
+  margin: 50px;
+}
+
+.container {
+  border: 10px solid blue;
+  /* ^flex container 선언 */
+  display: flex;
+  /* ^flex-item이 어떤 방향으로 렌더링 될지 지정 */
+  flex-direction: row;
+  width: 1000px;
+  /* ^flex container에 wrap 적용하여 줄바꿈 허용 */
+  flex-wrap: wrap;
+}
+
+.item1 {
+  background: yellow;
+  order: 1;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 50px;
+  /* ^grow-shrink-basis */
+  flex: 1 1 50px;
+}
+.item2 {
+  background: pink;
+  flex-basis: 50px;
+}
+.item3 {
+  background: skyblue;
+  flex-basis: 50px;
+}
+.item4 {
+  background: lime;
+  flex-basis: 50px;
+}
+.item5 {
+  background: salmon;
+  flex-basis: 50px;
+}
+.item6 {
+  background: silver;
+  flex-basis: 50px;
+}
+.item7 {
+  background: teal;
+  flex-basis: 50px;
+}
+.item8 {
+  background: aqua;
+  flex-basis: 50px;
+}
+.item9 {
+  background: violet;
+  flex-basis: 50px;
+}
+.item10 {
+  background: olive;
+  order: -1;
+}
