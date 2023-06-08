@@ -125,6 +125,8 @@ fieldset {
     /* ^ blur값 주기 */
     backdrop-filter: blur(4px);
     padding: var(--spacing-lg);
+    /* ^현재 위치를 기준으로 x축 150% 이동 */
+    transform: translateX(-150%);
   }
 
   .menu__item {
