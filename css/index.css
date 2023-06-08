@@ -41,6 +41,13 @@ fieldset {
   margin: 0;
   padding: 0;
 }
+
+.button--none {
+  border: 0;
+  padding: 0;
+  translate: 0;
+}
+
 .button {
   cursor: pointer;
   border: 0;
@@ -106,9 +113,50 @@ fieldset {
     order: -1;
   }
   /* 모바일 검색폼 */
-.searchForm__group .formInput {
-  flex-grow: 1;
-}
+  .searchForm__group .formInput {
+    flex-grow: 1;
+  }
+
+  /* 모바일 메인 메뉴 제어 버튼 */
+  .buttonWrapper {
+    background: yellow;
+    position: absolute;
+    /* ^ memberonly와 버튼과 정렬 맞추기 위해 */
+    right: var(--spacing-lg);
+    top: 3.75rem;
+  }
+
+  .button--burger {
+    position: relative;
+    width: 1.875rem;
+    height: 1.875rem;
+    background-color: blue;
+  }
+
+  .button--burgerBarTop,
+  .button--burgerBarMiddle,
+  .button--burgerBarBottom {
+    background: var(--white);
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    border-radius: 1.5rem;
+  }
+
+  .button--burgerBarTop {
+    top: 0;
+  }
+
+  .button--burgerBarMiddle {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .button--burgerBarBottom {
+    top: 100%;
+    transform: translateY(-100%);
+  }
 
   /* 모바일 메인 메뉴 */
   .menu__list {
@@ -164,6 +212,12 @@ fieldset {
 
   .searchForm__group .formInput {
     width: 25rem;
+  }
+
+  /* 데스크탑 메인 메뉴 제어 버튼 */
+  .buttonWrapper {
+    /* ^ 화면에 존재하지 않음. */
+    display: none;
   }
 
   /* 데스크탑 메인 메뉴 */
