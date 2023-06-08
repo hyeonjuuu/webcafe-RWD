@@ -79,9 +79,9 @@ fieldset {
   gap: var(--spacing-xs);
 }
 
-.searchForm__group .formInput {
+/* .searchForm__group .formInput {
 
-}
+} */
 
 /* 공통 메인 메뉴 */
 .menu__list {
