@@ -119,7 +119,6 @@ fieldset {
     /* ^logo를 중앙에 배치 */
     align-self: center;
   }
-  /* 데스크탑 멤버서비스 */
   /* 데스크탑 검색 폼 */
   .searchForm__group {
     justify-content: flex-end;
@@ -127,5 +126,36 @@ fieldset {
 
   .searchForm__group .formInput {
     width: 25rem;
+  }
+
+  /* 데스크탑 메인 메뉴 */
+  .menu {
+    background-color: var(--secondary-color);
+    padding: var(--spacing-base) var(--spacing-lg);
+  }
+
+  .menu__list {
+    /* ^ 네비게이션이 중앙에 위치하게 배치 */
+    margin-left: auto;
+    margin-right: auto;
+    /* ^ padding 기본 값 초기화 */
+    padding-left: 0;
+    width: 100%;
+    max-width: var(--container-width);
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    color: var(--white);
+    /* ^ flex-item간의 간격을 동일하게 조절 */
+    justify-content: space-between;
+  }
+
+  .menu__link {
+    /* ^ a요소에 위 아래 padding 값을 적용하기 위해 */
+    display: block;
+    font-size: var(--text--md);
+    font-weight: 700;
+    padding: var(--spacing-sm);
+    text-shadow: 1px 1px 0 var(--black), -1px -1px 0 var(--black);
   }
 }
