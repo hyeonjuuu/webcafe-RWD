@@ -119,19 +119,22 @@ fieldset {
 
   /* 모바일 메인 메뉴 제어 버튼 */
   .buttonWrapper {
-    background: yellow;
     position: absolute;
     /* ^ memberonly와 버튼과 정렬 맞추기 위해 */
-    right: var(--spacing-lg);
-    top: 3.75rem;
+    right: var(--spacing-md);
+    top: 3.5rem;
     overflow: hidden;
+    padding: 0.25rem;
   }
 
   .button--burger {
     position: relative;
     width: 1.875rem;
     height: 1.875rem;
-    background-color: blue;
+  }
+
+  .button--burger:focus {
+    outline-offset: 2px;
   }
 
   .button--burgerBarTop,
@@ -164,17 +167,17 @@ fieldset {
     transform: translateY(-100%);
   }
 
-  .is--active .button--burgerBarTop {
+  .button--burger.is--active .button--burgerBarTop {
     top: 50%;
     transform: translateY(-50%) rotate(45deg);
   }
 
-  .is--active .button--burgerBarBottom {
+  .button--burger.is--active .button--burgerBarBottom {
     top: 50%;
     transform: translateY(-50%) rotate(-45deg);
   }
 
-  .is--active .button--burgerBarMiddle {
+  .button--burger.is--active .button--burgerBarMiddle {
     /* ^ X축으로 -120%이동, Y축으로 -50%이동 */
     transform: translate(-120%, -50%);
   }
@@ -196,6 +199,11 @@ fieldset {
     padding: var(--spacing-lg);
     /* ^현재 위치를 기준으로 x축 150% 이동 */
     transform: translateX(-150%);
+    transition: all 400ms;
+  }
+
+  .menu.is--active .menu__list {
+    transform: none;
   }
 
   .menu__item {
