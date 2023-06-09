@@ -1,24 +1,20 @@
 /* 애니메이션 CSS */
-
 body {
   height: 100vh;
-  background: url(./../assets//bg_flower.png) no-repeat 50% 0,
-  linear-gradient(to bottom, #aaa, #ccc, #eee, #fff) repeat 0 0;
+  background: url(./../assets/bg_flower.png) no-repeat 50% 0,
+    linear-gradient(to bottom, #aaa, #ccc, #eee, #fff) repeat 0 0;
   padding-top: 110px;
 }
-
 /* keyframe 선언 */
 @keyframes moveEffect {
-  /* ^시작하는 위치 */
   0% {
     /* padding: 0; */
     /* transform: translate(0, 0); */
     top: 0;
     left: 0;
-    font-size: 12;
+    font-size: 12px;
     color: rgba(0, 0, 0, 0);
   }
-  /* ^끝나는 위치 */
   100% {
     /* padding: 75px 0 0 400px; */
     /* transform: translate(400px, 75px); */
@@ -28,53 +24,62 @@ body {
     color: rgba(0, 0, 0, 1);
   }
 }
-
 @keyframes fadeEffect {
   0% {
     opacity: 1;
   }
-  /* 50% {
-    opacity: 0;
-  } */
   100% {
-    opacity: 1;
+    opacity: 0;
   }
 }
-
-.visual::before, .visual::after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: "";
-  width: 100%;
-  height: 100%;
-  animation-name: fadeEffect;
-  animation-duration: 4s;
-  /* ^ 애니메이션 반복 */
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
 .visual {
   border: 1px solid green;
-  position: relative;
   width: 940px;
   height: 120px;
   margin: 0 auto;
+  position: relative;
   background: yellow;
+  border-radius: 50px 0 50px 0;
+  transition: all 300ms ease-in-out;
 }
 
+.visual:hover {
+  background: skyblue;
+  border-radius: 0 50px 0 50px;
+  border-width: 10px;
+  border-style: dashed;
+  scale: 0;
+}
 
+.is--active.visual {
+  background: pink;
+  border-radius: 0 50px 0 50px;
+  border-width: 10px;
+  border-style: dashed;
+}
 
+.visual::before,
+.visual::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation-name: fadeEffect;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
 .visual::before {
-  background: url(./../assets/ani_flower_01.png) no-repeat 0 0, 
-  url(./../assets/ani_flower_02.png) no-repeat 800px 10px;
+  background: url(./../assets/ani_flower_01.png) no-repeat 0 0,
+    url(./../assets/ani_flower_02.png) no-repeat 800px 10px;
   animation-play-state: paused;
 }
 
 .visual::after {
-  background: url(./../assets/ani_flower_03.png) no-repeat 300px 15px, 
-  url(./../assets/ani_flower_04.png) no-repeat 670px 10px;
+  background: url(./../assets/ani_flower_03.png) no-repeat 300px 15px,
+    url(./../assets/ani_flower_04.png) no-repeat 670px 10px;
   animation-delay: 1s;
 }
 
@@ -83,5 +88,20 @@ body {
   animation-name: moveEffect;
   animation-duration: 3s;
   animation-fill-mode: forwards;
-  
+}
+
+/* 카드 뒤집기 */
+.flip-button {
+  background: darkblue;
+  color: white;
+  border: 0;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.card-wrapper {
+  width: 800px;
+  height: 400px;
+  margin: 50px;
 }
