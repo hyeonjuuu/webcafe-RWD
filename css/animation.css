@@ -101,9 +101,11 @@ body {
 }
 
 .card-wrapper {
-  width: 800px;
+  width: 750px;
   height: 400px;
   margin: 50px;
+  /* ^ perspective 속성으로 원근감 주기 */
+  perspective: 600px;
 }
 
 .card {
@@ -112,6 +114,14 @@ body {
   /* ^ 앞면과 뒷면을 동일한 위치에 겹쳐두기 위해서 */
   /* ^ 겹쳐놓을 absolute 의 기준 만들어줌 */
   position: relative;
+  transform-style: preserve-3d;
+  /* ^변형이 시작되는 지점 */
+  transform-origin: center right;
+  transition: transform 1s;
+}
+
+.card.is--flipped {
+  transform: translateX(-100%) rotateY(-180deg);
 }
 
 .card-face {
@@ -122,6 +132,8 @@ body {
   width: 100%;
   height: 100%;
   border: 2px solid #000;
+  /* ^ flip 했을때 반대편 카드가 숨겨지게 */
+  backface-visibility: hidden;
 
 }
 
@@ -131,4 +143,5 @@ body {
 
 .card-face-white {
   background: url(./../images/likelion-white.png);
+  transform: rotateY(180deg);
 }
