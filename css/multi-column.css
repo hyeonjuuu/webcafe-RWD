@@ -1,0 +1,16 @@
+
+
+/* 멀티 컬럼 레이아웃 */
+.container {
+  border: 1px solid silver;
+  padding: 50px;
+  columns: 200px 4;
+  column-rule: #aaa dashed 2px;
+  column-gap: 20px;
+}
+
+h1 {
+  background: teal;
+  color: white;
+  column-span: all;
+}
